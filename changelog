@@ -1,0 +1,116 @@
+mtkbabel (0.8.3.1)
+
+  * Fixed model detection for Qstarz BT-Q1000P: not Holux format.
+  * Added detection of Holux GPSport 245 and Holux M-1000C.
+  * Refactored handling of Holux separators: HOLUXxxxxxLOGGER and
+    HOLUXxxxxxWAYPNT.
+  * Changed behaviour with-i switch: do not save bad data into the
+    GPX. Added the -I switch to download also bad data.
+
+ -- Niccolo Rigacci <niccolo@rigacci.org>  Sat, 30 Jul 2011 18:05:44 +0200
+
+mtkbabel (0.8.3)
+
+  * Fixed a bug in identifying model (and flash memory size).
+  * Added iBlue 747A+ to the known models, thanks to Bastiaan Naber.
+  * Added binmode() call when opening binary files.
+
+ -- Niccolo Rigacci <niccolo@rigacci.org>  Sat, 21 May 2011 15:16:39 +0200
+
+mtkbabel (0.8.2)
+
+  * Added flash memory size for 747 A+ GPS Trip Recorder,
+    thanks to Thomas Siedlich.
+  * Added support for the Holux M-1200E, which does not embed
+    the Holux string into the binary data. A new -x switch is
+    required to read back such data. Thanks to Paulius Zaleckas.
+
+ -- Niccolo Rigacci <niccolo@rigacci.org>  Sat, 03 Apr 2010 01:38:34 +0200
+
+mtkbabel (0.8.1)
+
+  * Added some GPS models to known flash memory size.
+  * Changed range of loggin criteria, allowing floating point values
+    from 0.10 to 9999999.90, thanks to Stanislav Brabec.
+  * Added support for Holux M-241 firmware 1.13, thanks to Stefan
+    Schöfegger and Luca Niccoli.
+  * Error message for device open errors.
+
+ -- Niccolo Rigacci <niccolo@rigacci.org>  Thu, 18 Mar 2010 19:05:05 +0100
+
+mtkbabel (0.8)
+
+  * Allow more time for the -E and -R commands to execute.
+  * Exit if MTK Test command fails.
+  * Added hints in error messages for device turned OFF.
+  * Added timeout and error message for wrong communication speed.
+  * Added -c option, to get a GPX file with both tracks and waypoints,
+    thanks to Filippo Giunchedi.
+  * Added -i option, to ignore some error conditions and try
+    to extract as much data as possible from the GPS. Thanks
+    to Markus Brückner and Stefan Höhne.
+
+ -- Niccolo Rigacci <niccolo@rigacci.org>  Mon, 19 Jan 2009 18:36:13 +0100
+
+mtkbabel (0.7)
+
+  * Added support for the Holux M-241 data logger.
+  * Added option -R to recover from a disabled log status.
+
+ -- Niccolo Rigacci <niccolo@rigacci.org>  Tue, 17 Jun 2008 16:16:25 +0200
+
+mtkbabel (0.6)
+
+  * Added a man page, thanks to Uwe Hermann.
+  * Some cosmetic changes.
+
+ -- Niccolo Rigacci <niccolo@rigacci.org>  Thu, 07 Feb 2008 22:22:20 +0100
+
+mtkbabel (0.5)
+
+  * Read all the contents of the flash memory when in OVERLAP mode or
+    when forced with the -a option.
+  * Added flash_memory_size($model_id) function.
+  * Fixed memory used computation.
+  * Improved error handling in log file parsing.
+  * Description of record type (time, distance, speed, button) can now 
+    accomodate multiple criteria.
+  * Clean-up of the code.
+
+ -- Niccolo Rigacci <niccolo@rigacci.org>  Mon, 10 Dec 2007 16:39:55 +0100
+
+mtkbabel (0.4)
+
+  * Used the File::Basename library instead of basename(1) Unix command.
+  * Added display of failed sectors, need format and disable status.
+  * Chaged wording: use sector instead of block, to conform with Mediatek
+    documentation.
+  * Fixed a bug occurring when SID is logged, but NSAT is not.
+  * Better output of waypoints, now conform with GPX schema.
+  * Grouped all the serial port related functions, to ease porting.
+
+ -- Niccolo Rigacci <niccolo@rigacci.org>  Wed, 28 Nov 2007 22:38:07 +0100
+
+mtkbabel (0.3)
+
+  * Fixed a bug in encode_log_format() function: disabling a log field
+    now works as expected.
+  * Changed type of $satdata_elevation from unsigned to signed.
+  * Now produces GPX 1.1 files with mtk extensions, as defined in the
+    proposed MtkExtensionsv1.xsd schema.
+
+ -- Niccolo Rigacci <niccolo@rigacci.org>  Sun, 25 Nov 2007 21:31:21 +0100
+
+mtkbabel (0.2)
+
+  * Fixed an error in utm_time() function.
+  * Improved timeout handling in packet_wait().
+  * Correction in changelog (!).
+
+ -- Niccolo Rigacci <niccolo@rigacci.org>  Tue, 20 Nov 2007 14:06:53 +0100
+
+mtkbabel (0.1)
+
+  * First public release.
+
+ -- Niccolo Rigacci <niccolo@rigacci.org>  Wed, 17 Oct 2007 12:37:37 +0200
