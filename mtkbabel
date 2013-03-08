@@ -528,7 +528,7 @@ $ret = packet_wait('PMTK182,3,11,');
 packet_wait('PMTK001,182,2,3');
 if ($ret =~ m/PMTK182,3,11,([0-9A-Za-z]+)\*/) {
     $fail_sectors = $1;
-    printf("Memory health status (failed sectors mask): %s\n", $fail_sectors);
+    printf("Memory health status (failed sectors mask):\n%s\n", $fail_sectors);
 }
 
 
@@ -757,7 +757,8 @@ sub write_log_packet {
             printf $fp_log chr(hex(substr($pkt, $i, 2)));
         }
         $percent = ($log_offset / $bytes_to_read) * 100;
-        printf("Saved log data: %6.2f%%\n", $percent);
+        $|++;
+        printf("Saved log data: %6.2f%%\r", $percent);
     }
 }
 
